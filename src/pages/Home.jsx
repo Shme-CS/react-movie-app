@@ -9,6 +9,7 @@ function Home() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(0)
 
   useEffect(() => {
     fetchPopularMovies()
@@ -20,6 +21,7 @@ function Home() {
       setError(null)
       const data = await getPopularMovies(page)
       setMovies(data.results)
+      setTotalPages(data.total_pages)
     } catch (err) {
       console.error('Error fetching movies:', err)
       setError('Failed to load movies. Please check your API key and try again.')
@@ -33,6 +35,10 @@ function Home() {
     // TODO: Navigate to movie details page
   }
 
+  const handleRetry = () => {
+    fetchPopularMovies()
+  }
+
   if (loading) {
     return <Loader type="skeleton" />
   }
@@ -44,7 +50,7 @@ function Home() {
           <span className="error-icon">⚠️</span>
           <h2 className="error-title">Oops! Something went wrong</h2>
           <p className="error-message">{error}</p>
-          <button className="btn-retry" onClick={fetchPopularMovies}>
+          <button className="btn-retry" onClick={handleRetry}>
             Try Again
           </button>
         </div>
@@ -73,18 +79,17 @@ function Home() {
           </div>
 
           {/* Movie Grid */}
-          <div className="movie-grid">
-            {movies.map((movie) => (
-              <MovieCard 
-                key={movie.id} 
-                movie={movie}
-                onClick={handleMovieClick}
-              />
-            ))}
-          </div>
-
-          {/* Empty State */}
-          {movies.length === 0 && !loading && (
+          {movies.length > 0 ? (
+            <div className="movie-grid">
+              {movies.map((movie) => (
+                <MovieCard 
+                  key={movie.id} 
+                  movie={movie}
+                  onClick={handleMovieClick}
+                />
+              ))}
+            </div>
+          ) : (
             <div className="empty-state">
               <span className="empty-icon">🎬</span>
               <h3 className="empty-title">No Movies Found</h3>

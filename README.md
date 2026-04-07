@@ -1,172 +1,409 @@
-# React Movie Discovery App
+# 🎬 Movie Discovery App
 
-A professional movie discovery web application built with React, Vite, and The Movie Database (TMDb) API.
+A modern, feature-rich movie discovery web application built with React and powered by The Movie Database (TMDb) API. Browse thousands of movies, search for your favorites, and create your personal watchlist with an elegant, responsive interface.
 
-## 🚀 Project Status
+![React](https://img.shields.io/badge/React-18.0-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?logo=vite)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-**Current Stage:** Stage 7 Complete - Search Functionality ✅
+## ✨ Features
 
-**Commits:** 21 total
-- Stage 1: Project foundation
-- Stage 2: Navbar component  
-- Stage 3: MovieCard, MovieGrid, and Loader components
-- Stage 4: API service with Axios
-- Stage 5: Home page with API integration
-- Stage 6: Movie Details page with routing
-- Stage 7: Search functionality
+### Core Functionality
+- 🎥 **Browse Popular Movies** - Discover trending and popular movies with real-time data
+- 🔍 **Smart Search** - Search movies by title with instant results
+- 📖 **Detailed Information** - View comprehensive movie details including ratings, genres, cast, and more
+- ❤️ **Favorites System** - Save your favorite movies with localStorage persistence
+- 🌓 **Dark/Light Theme** - Toggle between dark and light modes with smooth transitions
+- 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 
-## 📁 Project Structure
+### User Experience
+- ⚡ **Fast Loading** - Skeleton loaders for better perceived performance
+- 🎨 **Smooth Animations** - Polished transitions and hover effects
+- 🚨 **Error Handling** - Graceful error states with retry functionality
+- 🔄 **Real-time Updates** - Instant feedback on user actions
+- 🎯 **Intuitive Navigation** - Clean, user-friendly interface
 
-```
-react-movie-app/
-├── public/
-├── src/
-│   ├── components/      # Reusable UI components
-│   ├── pages/          # Page components
-│   ├── services/       # API services
-│   ├── hooks/          # Custom React hooks
-│   ├── context/        # Context providers
-│   ├── styles/         # Global styles
-│   │   ├── index.css   # Global CSS & reset
-│   │   └── App.css     # App component styles
-│   ├── App.jsx         # Main App component
-│   └── main.jsx        # Entry point
-├── index.html
-├── package.json
-├── vite.config.js
-└── README.md
-```
+## 🚀 Demo
 
-## 🛠️ Technologies
+[Live Demo](#) <!-- Add your deployment URL here -->
 
-- **React 18** - UI library
-- **Vite** - Build tool and dev server
-- **React Router** - Client-side routing (to be added)
-- **Axios** - HTTP client (to be added)
-- **TMDb API** - Movie data source (to be integrated)
+## 📸 Screenshots
 
-## 📦 Installation
+### Home Page - Dark Mode
+![Home Page Dark](./screenshots/home-dark.png)
 
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
+### Home Page - Light Mode
+![Home Page Light](./screenshots/home-light.png)
 
-### Setup Steps
+### Movie Details
+![Movie Details](./screenshots/movie-details.png)
 
-1. **Clone the repository**
+### Favorites Page
+![Favorites](./screenshots/favorites.png)
+
+### Mobile View
+![Mobile View](./screenshots/mobile.png)
+
+## 🛠️ Technologies Used
+
+### Frontend
+- **React 18** - Modern UI library with hooks
+- **Vite** - Next-generation frontend build tool
+- **React Router DOM** - Client-side routing
+- **Axios** - HTTP client for API requests
+- **Context API** - State management
+
+### Styling
+- **CSS3** - Modern styling with CSS Variables
+- **Responsive Design** - Mobile-first approach
+- **CSS Animations** - Smooth transitions and effects
+
+### API
+- **TMDb API** - The Movie Database API for movie data
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Node.js** (v16.0 or higher)
+- **npm** or **yarn**
+- **TMDb API Key** (free from [themoviedb.org](https://www.themoviedb.org/settings/api))
+
+## 🔧 Installation
+
+### 1. Clone the repository
 ```bash
 git clone https://github.com/Shme-CS/react-movie-app.git
 cd react-movie-app
 ```
 
-2. **Install dependencies**
+### 2. Install dependencies
 ```bash
 npm install
+# or
+yarn install
 ```
 
-3. **Start development server**
+### 3. Get your TMDb API Key
+1. Visit [The Movie Database](https://www.themoviedb.org/signup)
+2. Create a free account
+3. Go to [API Settings](https://www.themoviedb.org/settings/api)
+4. Request an API key (choose "Developer" option)
+5. Copy your API key
+
+### 4. Configure environment variables
+Create a `.env` file in the root directory:
+```bash
+cp .env.example .env
+```
+
+Add your TMDb API key to `.env`:
+```env
+VITE_TMDB_API_KEY=your_api_key_here
+```
+
+### 5. Start the development server
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
-4. **Open in browser**
+The app will open at [http://localhost:5173](http://localhost:5173)
+
+## 📖 Usage Guide
+
+### Browsing Movies
+- The home page displays popular movies by default
+- Scroll through the grid to discover new movies
+- Click on any movie card to view detailed information
+
+### Searching Movies
+1. Use the search bar in the navigation
+2. Type your search query
+3. Press Enter or click the search button
+4. Results appear instantly
+5. Click the X button to clear search
+
+### Managing Favorites
+- Click the heart icon (🤍) on any movie card to add to favorites
+- The heart turns red (❤️) when added
+- Click again to remove from favorites
+- Access all favorites from the "Favorites" page in navigation
+- Favorites are saved in localStorage and persist across sessions
+
+### Switching Themes
+- Click the theme toggle button in the navigation
+- Switch between dark mode (🌙) and light mode (☀️)
+- Theme preference is saved automatically
+
+### Viewing Movie Details
+1. Click on any movie card
+2. View comprehensive information:
+   - Movie poster and backdrop
+   - Title, tagline, and overview
+   - Rating, release date, and runtime
+   - Genres and production companies
+   - Budget and revenue (if available)
+3. Click "Back" to return to previous page
+
+## 📁 Project Structure
+
 ```
-http://localhost:5173
+react-movie-app/
+├── public/                 # Static assets
+├── src/
+│   ├── components/        # Reusable components
+│   │   ├── ErrorBoundary.jsx
+│   │   ├── Loader.jsx
+│   │   ├── MovieCard.jsx
+│   │   ├── MovieGrid.jsx
+│   │   ├── Navbar.jsx
+│   │   └── ThemeToggle.jsx
+│   ├── pages/            # Page components
+│   │   ├── Home.jsx
+│   │   ├── MovieDetails.jsx
+│   │   ├── Favorites.jsx
+│   │   └── NotFound.jsx
+│   ├── context/          # Context providers
+│   │   ├── FavoritesContext.jsx
+│   │   └── ThemeContext.jsx
+│   ├── services/         # API services
+│   │   └── movieApi.js
+│   ├── hooks/            # Custom hooks
+│   │   └── useDebounce.js
+│   ├── styles/           # Global styles
+│   │   ├── index.css
+│   │   └── App.css
+│   ├── App.jsx           # Main app component
+│   └── main.jsx          # Entry point
+├── .env.example          # Environment variables template
+├── .gitignore
+├── package.json
+├── vite.config.js
+└── README.md
 ```
 
-## 🎯 Planned Features
+## 🎨 Component Overview
 
-- [x] Movie discovery and browsing
-- [x] Search functionality
-- [x] Movie details page
-- [x] Dynamic routing
-- [x] Responsive design
-- [ ] Favorites/Watchlist
-- [ ] Dark/Light theme toggle
-- [ ] Pagination/Infinite scroll
-- [ ] Movie trailers
-- [ ] Genre filtering
+### Core Components
 
-## 📝 Development Stages
+**MovieCard**
+- Displays movie poster, title, rating, and year
+- Favorite button with heart animation
+- Hover effects with overlay
+- Click to view details
 
-### Stage 1: Foundation ✅
-- [x] Initialize React project with Vite
-- [x] Setup folder structure
-- [x] Create base layout
-- [x] Add global CSS
-- [x] Prepare App component
+**Navbar**
+- Search functionality
+- Navigation links
+- Theme toggle
+- Favorites count badge
+- Mobile responsive menu
 
-### Stage 2: Navbar ✅
-- [x] Create Navbar component
-- [x] Add search bar UI
-- [x] Add navigation links
-- [x] Mobile responsive menu
+**Loader**
+- Spinner for general loading
+- Skeleton cards for movie grid loading
+- Shimmer animation effect
 
-### Stage 3: Movie Components ✅
-- [x] Create MovieCard component
-- [x] Create MovieGrid component
-- [x] Create Loader component
-- [x] Add sample movie data
-- [x] Implement hover effects
+**ThemeToggle**
+- Animated switch between dark/light modes
+- Visual feedback with icons
+- Smooth transitions
 
-### Stage 4: API Integration ✅
-- [x] Setup TMDb API service
-- [x] Implement movie fetching
-- [x] Add error handling
-- [x] Install Axios
+### Pages
 
-### Stage 5: Home Page ✅
-- [x] Fetch popular movies
-- [x] Display movies in grid
-- [x] Add loading states
-- [x] Error handling with retry
-- [x] ErrorBoundary component
+**Home**
+- Popular movies grid
+- Search results display
+- Loading and error states
+- Empty state handling
 
-### Stage 6: Movie Details ✅
-- [x] Create MovieDetails page
-- [x] Setup React Router
-- [x] Dynamic routing
-- [x] Display full movie info
-- [x] Backdrop and poster
-- [x] 404 Not Found page
+**MovieDetails**
+- Full movie information
+- Backdrop image with overlay
+- Responsive layout
+- Back navigation
 
-### Stage 7: Search ✅
-- [x] Connect search bar to API
-- [x] Display search results
-- [x] Handle empty results
-- [x] Clear search functionality
-- [x] URL-based search params
+**Favorites**
+- Saved movies grid
+- Clear all functionality
+- Empty state with CTA
+- Persistent storage
 
-### Stage 8: Advanced Features (Next)
-- [ ] Favorites functionality
-- [ ] LocalStorage persistence
-- [ ] Pagination controls
-- [ ] Genre filtering
+**NotFound**
+- 404 error page
+- Navigation back to home
 
-## 🚀 Available Scripts
+## 🔑 Environment Variables
 
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `VITE_TMDB_API_KEY` | Your TMDb API key | Yes |
+
+## 🚀 Build & Deployment
+
+### Build for production
 ```bash
-# Start development server
-npm run dev
-
-# Build for production
 npm run build
+# or
+yarn build
+```
 
-# Preview production build
+### Preview production build
+```bash
 npm run preview
+# or
+yarn preview
+```
 
-# Lint code
-npm run lint
+### Deploy to Vercel
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+### Deploy to Netlify
+```bash
+# Install Netlify CLI
+npm i -g netlify-cli
+
+# Build and deploy
+npm run build
+netlify deploy --prod --dir=dist
+```
+
+### Environment Variables for Deployment
+Don't forget to add your `VITE_TMDB_API_KEY` in your deployment platform's environment variables settings.
+
+## 🎯 API Reference
+
+This project uses [The Movie Database (TMDb) API](https://developers.themoviedb.org/3).
+
+### Main Endpoints Used
+- `GET /movie/popular` - Get popular movies
+- `GET /search/movie` - Search movies
+- `GET /movie/{movie_id}` - Get movie details
+- `GET /genre/movie/list` - Get movie genres
+
+### Rate Limits
+- 40 requests per 10 seconds per IP address
+
+## 🧪 Testing
+
+```bash
+# Run tests (when implemented)
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 🐛 Known Issues
+
+- None at the moment
+
+## 🔮 Future Improvements
+
+### Planned Features
+- [ ] **Pagination** - Load more movies with infinite scroll
+- [ ] **Genre Filtering** - Filter movies by genre
+- [ ] **Sort Options** - Sort by rating, date, popularity
+- [ ] **Movie Trailers** - Watch trailers with YouTube embed
+- [ ] **Cast Information** - View cast and crew details
+- [ ] **Similar Movies** - Discover similar movies
+- [ ] **User Reviews** - Read and write movie reviews
+- [ ] **Watchlist** - Separate watchlist from favorites
+- [ ] **Share Functionality** - Share movies on social media
+- [ ] **Advanced Search** - Filter by year, rating, genre
+
+### Technical Improvements
+- [ ] **Unit Tests** - Jest + React Testing Library
+- [ ] **E2E Tests** - Cypress or Playwright
+- [ ] **TypeScript** - Type safety
+- [ ] **PWA Support** - Offline functionality
+- [ ] **Performance Monitoring** - Analytics integration
+- [ ] **SEO Optimization** - Meta tags and SSR
+- [ ] **Accessibility** - WCAG compliance
+- [ ] **Internationalization** - Multi-language support
+
+## 📝 Changelog
+
+### Version 1.0.0 (2026-04-06)
+- Initial release
+- Browse popular movies
+- Search functionality
+- Movie details page
+- Favorites system
+- Dark/Light theme
+- Responsive design
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+```
+MIT License
+
+Copyright (c) 2026 Shme-CS
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 ## 👨‍💻 Author
 
-Created by [Shme-CS](https://github.com/Shme-CS)
+**Shme-CS**
+- GitHub: [@Shme-CS](https://github.com/Shme-CS)
 
-## 📄 License
+## 🙏 Acknowledgments
 
-MIT License
+- [The Movie Database (TMDb)](https://www.themoviedb.org/) - For providing the movie data API
+- [React](https://react.dev/) - For the amazing UI library
+- [Vite](https://vitejs.dev/) - For the lightning-fast build tool
+- [React Router](https://reactrouter.com/) - For seamless routing
+- All contributors and supporters of this project
+
+## 📞 Support
+
+If you have any questions or need help, please:
+- Open an issue on GitHub
+- Check the [API Documentation](./API_SETUP.md)
+- Review the [Project Documentation](./PROJECT_COMPLETE.md)
+
+## ⭐ Show Your Support
+
+If you found this project helpful, please give it a ⭐ on GitHub!
 
 ---
 
-**Note:** This project is under active development. Features will be added incrementally.
+**Built with ❤️ using React and TMDb API**
+
+🎬 Happy Movie Discovering! 🍿

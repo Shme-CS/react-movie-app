@@ -17,6 +17,10 @@
   box-shadow: var(--shadow-lg);
 }
 
+.movie-card:active {
+  transform: translateY(-4px);
+}
+
 /* Movie Poster */
 .movie-poster {
   position: relative;
@@ -34,7 +38,8 @@
 }
 
 .movie-card:hover .movie-poster img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(0.8);
 }
 
 /* Rating Badge */
@@ -51,6 +56,12 @@
   font-weight: 600;
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-md);
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.movie-card:hover .movie-rating {
+  transform: scale(1.1);
 }
 
 .rating-icon {
@@ -77,6 +88,9 @@
 /* Movie Info */
 .movie-info {
   padding: var(--spacing-sm);
+  background-color: var(--bg-card);
+  position: relative;
+  z-index: 1;
 }
 
 .movie-title {
@@ -87,6 +101,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: var(--transition);
+}
+
+.movie-card:hover .movie-title {
+  color: var(--primary-color);
 }
 
 .movie-year {
@@ -113,6 +132,7 @@
   justify-content: center;
   opacity: 0;
   transition: var(--transition);
+  z-index: 3;
 }
 
 .movie-card:hover .movie-overlay {
@@ -131,6 +151,7 @@
   cursor: pointer;
   transition: var(--transition);
   transform: translateY(20px);
+  box-shadow: var(--shadow-md);
 }
 
 .movie-card:hover .btn-details {
@@ -140,6 +161,11 @@
 .btn-details:hover {
   background-color: var(--primary-dark);
   transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-details:active {
+  transform: scale(0.98);
 }
 
 /* Responsive Design */

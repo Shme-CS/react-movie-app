@@ -1,6 +1,6 @@
 import './MovieCard.css'
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, onClick }) {
   // Destructure movie properties
   const {
     title,
@@ -31,8 +31,15 @@ function MovieCard({ movie }) {
     return 'rating-poor'
   }
 
+  // Handle card click
+  const handleClick = () => {
+    if (onClick) {
+      onClick(movie)
+    }
+  }
+
   return (
-    <div className="movie-card">
+    <div className="movie-card" onClick={handleClick}>
       {/* Movie Poster */}
       <div className="movie-poster">
         <img 
@@ -42,10 +49,12 @@ function MovieCard({ movie }) {
         />
         
         {/* Rating Badge */}
-        <div className={`movie-rating ${getRatingClass(vote_average)}`}>
-          <span className="rating-icon">⭐</span>
-          <span className="rating-value">{rating}</span>
-        </div>
+        {vote_average > 0 && (
+          <div className={`movie-rating ${getRatingClass(vote_average)}`}>
+            <span className="rating-icon">⭐</span>
+            <span className="rating-value">{rating}</span>
+          </div>
+        )}
       </div>
 
       {/* Movie Info */}
@@ -58,7 +67,9 @@ function MovieCard({ movie }) {
 
       {/* Hover Overlay */}
       <div className="movie-overlay">
-        <button className="btn-details">View Details</button>
+        <button className="btn-details" aria-label={`View details for ${title}`}>
+          View Details
+        </button>
       </div>
     </div>
   )

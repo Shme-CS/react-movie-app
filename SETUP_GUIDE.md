@@ -1,129 +1,156 @@
-# React Movie App - Setup Guide
+# 🚀 Quick Setup Guide - Movie Discovery App
 
-## ✅ Stage 1: Foundation Setup Complete
+## Prerequisites
 
-### What Was Done
+Before you start, make sure you have:
+- **Node.js** (v16 or higher) - [Download here](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **TMDb API Key** (free)
 
-1. **Project Initialization**
-   - Created React project using Vite
-   - Configured modern build tooling
+## Step-by-Step Setup
 
-2. **Folder Structure**
-   ```
-   src/
-   ├── components/    # UI components (empty, ready for next stage)
-   ├── pages/        # Page components (empty, ready for next stage)
-   ├── services/     # API services (empty, ready for next stage)
-   ├── hooks/        # Custom hooks (empty, ready for next stage)
-   ├── context/      # Context providers (empty, ready for next stage)
-   ├── styles/       # Global styles
-   │   ├── index.css # Global CSS with variables
-   │   └── App.css   # App component styles
-   ├── App.jsx       # Main App component
-   └── main.jsx      # Entry point
-   ```
+### Step 1: Get TMDb API Key (5 minutes)
 
-3. **Base Files Created**
-   - `App.jsx` - Main application component with header, main, footer
-   - `main.jsx` - React entry point with StrictMode
-   - `styles/index.css` - Global styles, CSS reset, utility classes
-   - `styles/App.css` - App-specific styles
-   - Placeholder `.gitkeep` files in empty folders
+1. Go to [https://www.themoviedb.org/signup](https://www.themoviedb.org/signup)
+2. Create a free account
+3. Verify your email
+4. Go to [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
+5. Click "Request an API Key"
+6. Choose "Developer"
+7. Fill out the form (you can use dummy data for personal projects)
+8. Copy your API Key (v3 auth)
 
-4. **CSS Variables Setup**
-   - Color scheme (Netflix-inspired dark theme)
-   - Spacing system
-   - Typography
-   - Transitions and shadows
+### Step 2: Install Dependencies
 
-### File Contents
-
-#### `src/App.jsx`
-- Basic layout structure
-- Header with app title
-- Main content area
-- Footer
-
-#### `src/styles/index.css`
-- CSS reset
-- CSS custom properties (variables)
-- Global typography
-- Utility classes
-- Scrollbar styling
-
-#### `src/styles/App.css`
-- App component layout
-- Header styling
-- Main content styling
-- Footer styling
-- Responsive breakpoints
-
-## 🚀 Running the Project
+Open terminal in the project folder and run:
 
 ```bash
-# Navigate to project
-cd react-movie-app
+npm install
+```
 
-# Install dependencies (if not already done)
+This will install all required packages (React, Vite, Axios, React Router, etc.)
+
+### Step 3: Setup Environment Variables
+
+1. Create a `.env` file in the root folder:
+
+```bash
+# On Windows (PowerShell)
+Copy-Item .env.example .env
+
+# On Mac/Linux
+cp .env.example .env
+```
+
+2. Open `.env` file and add your API key:
+
+```env
+VITE_TMDB_API_KEY=your_api_key_here
+```
+
+Replace `your_api_key_here` with the actual API key you got from TMDb.
+
+### Step 4: Run the Project
+
+```bash
+npm run dev
+```
+
+The app will start at: **http://localhost:5173**
+
+Open your browser and visit that URL!
+
+## Common Issues & Solutions
+
+### Issue 1: "npm: command not found"
+**Solution:** Install Node.js from [nodejs.org](https://nodejs.org/)
+
+### Issue 2: "Failed to load movies"
+**Solution:** 
+- Check your `.env` file exists
+- Verify your API key is correct
+- Make sure there are no spaces around the `=` sign
+- Restart the dev server after creating `.env`
+
+### Issue 3: Port 5173 already in use
+**Solution:** 
+- Close other Vite projects
+- Or change the port in `vite.config.js`
+
+### Issue 4: Blank page
+**Solution:**
+- Check browser console for errors (F12)
+- Make sure `.env` file is in the root folder (same level as package.json)
+- Restart the dev server
+
+## Project Commands
+
+```bash
+# Install dependencies
 npm install
 
 # Start development server
 npm run dev
 
-# Open browser to http://localhost:5173
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Check for errors
+npm run lint
 ```
 
-## 📝 Git Commands for This Stage
+## File Structure
+
+```
+react-movie-app/
+├── .env                    # Your API key (create this!)
+├── .env.example           # Template
+├── package.json           # Dependencies
+├── vite.config.js         # Vite configuration
+├── index.html             # HTML entry point
+└── src/
+    ├── main.jsx           # App entry point
+    ├── App.jsx            # Main component
+    ├── components/        # Reusable components
+    ├── pages/            # Page components
+    ├── context/          # State management
+    ├── services/         # API calls
+    └── styles/           # CSS files
+```
+
+## Testing the App
+
+Once running, you should see:
+1. ✅ Popular movies on the home page
+2. ✅ Search bar in navigation
+3. ✅ Click any movie to see details
+4. ✅ Click heart icon to add to favorites
+5. ✅ Toggle theme with sun/moon button
+
+## Need Help?
+
+- Check the main [README.md](./README.md) for detailed documentation
+- Review [API_SETUP.md](./API_SETUP.md) for API configuration
+- Open an issue on GitHub
+
+## Quick Start (Copy-Paste)
 
 ```bash
-# Initialize git (if not already done)
-git init
+# 1. Install dependencies
+npm install
 
-# Add all files
-git add .
+# 2. Create .env file
+echo "VITE_TMDB_API_KEY=your_api_key_here" > .env
 
-# Commit with proper message
-git commit -m "Initialize React movie app project with Vite and base structure"
-
-# Add remote (replace with your repo URL)
-git remote add origin https://github.com/Shme-CS/react-movie-app.git
-
-# Push to GitHub
-git branch -M main
-git push -u origin main
+# 3. Start the app
+npm run dev
 ```
 
-## ✅ Verification Checklist
-
-- [ ] Project runs without errors (`npm run dev`)
-- [ ] All folders are created
-- [ ] CSS variables are working
-- [ ] App displays header, main content, and footer
-- [ ] Responsive design works on mobile
-- [ ] Git repository is initialized
-- [ ] Code is committed and pushed to GitHub
-
-## 🎯 Next Steps
-
-**Stage 2: Components**
-- Create Navbar component
-- Create MovieCard component
-- Create SearchBar component
-- Create Loader component
-- Create Pagination component
-
-**Dependencies to Install Next:**
-```bash
-npm install react-router-dom axios
-```
-
-## 📚 Resources
-
-- [React Documentation](https://react.dev/)
-- [Vite Documentation](https://vitejs.dev/)
-- [TMDb API Documentation](https://developers.themoviedb.org/3)
+Replace `your_api_key_here` with your actual TMDb API key!
 
 ---
 
-**Status:** Foundation Complete ✅  
-**Ready for:** Component Development
+**That's it! You're ready to discover movies! 🎬🍿**

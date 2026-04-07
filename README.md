@@ -4,12 +4,16 @@ A professional movie discovery web application built with React, Vite, and The M
 
 ## 🚀 Project Status
 
-**Current Stage:** Stage 3 Complete - MovieCard Component ✅
+**Current Stage:** Stage 7 Complete - Search Functionality ✅
 
-**Commits:** 7 total
+**Commits:** 21 total
 - Stage 1: Project foundation
 - Stage 2: Navbar component  
 - Stage 3: MovieCard, MovieGrid, and Loader components
+- Stage 4: API service with Axios
+- Stage 5: Home page with API integration
+- Stage 6: Movie Details page with routing
+- Stage 7: Search functionality
 
 ## 📁 Project Structure
 
@@ -72,12 +76,13 @@ http://localhost:5173
 
 ## 🎯 Planned Features
 
-- [ ] Movie discovery and browsing
-- [ ] Search functionality
-- [ ] Movie details page
+- [x] Movie discovery and browsing
+- [x] Search functionality
+- [x] Movie details page
+- [x] Dynamic routing
+- [x] Responsive design
 - [ ] Favorites/Watchlist
 - [ ] Dark/Light theme toggle
-- [ ] Responsive design
 - [ ] Pagination/Infinite scroll
 - [ ] Movie trailers
 - [ ] Genre filtering
@@ -104,11 +109,39 @@ http://localhost:5173
 - [x] Add sample movie data
 - [x] Implement hover effects
 
-### Stage 4: API Integration (Next)
-- [ ] Setup TMDb API service
-- [ ] Implement movie fetching
-- [ ] Add error handling
-- [ ] Replace sample data with API
+### Stage 4: API Integration ✅
+- [x] Setup TMDb API service
+- [x] Implement movie fetching
+- [x] Add error handling
+- [x] Install Axios
+
+### Stage 5: Home Page ✅
+- [x] Fetch popular movies
+- [x] Display movies in grid
+- [x] Add loading states
+- [x] Error handling with retry
+- [x] ErrorBoundary component
+
+### Stage 6: Movie Details ✅
+- [x] Create MovieDetails page
+- [x] Setup React Router
+- [x] Dynamic routing
+- [x] Display full movie info
+- [x] Backdrop and poster
+- [x] 404 Not Found page
+
+### Stage 7: Search ✅
+- [x] Connect search bar to API
+- [x] Display search results
+- [x] Handle empty results
+- [x] Clear search functionality
+- [x] URL-based search params
+
+### Stage 8: Advanced Features (Next)
+- [ ] Favorites functionality
+- [ ] LocalStorage persistence
+- [ ] Pagination controls
+- [ ] Genre filtering
 
 ## 🚀 Available Scripts
 

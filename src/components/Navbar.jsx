@@ -1,10 +1,13 @@
 import { useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams, useLocation } from 'react-router-dom'
+import { useFavorites } from '../context/FavoritesContext'
 import './Navbar.css'
 
 function Navbar() {
   const navigate = useNavigate()
+  const location = useLocation()
   const [searchParams] = useSearchParams()
+  const { favoritesCount } = useFavorites()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '')
 
@@ -34,6 +37,10 @@ function Navbar() {
   const handleClearSearch = () => {
     setSearchQuery('')
     navigate('/')
+  }
+
+  const isActive = (path) => {
+    return location.pathname === path
   }
 
   return (
@@ -77,11 +84,14 @@ function Navbar() {
 
         {/* Navigation Links */}
         <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" className="nav-link active">
+          <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
             Home
           </Link>
-          <Link to="/favorites" className="nav-link">
+          <Link to="/favorites" className={`nav-link ${isActive('/favorites') ? 'active' : ''}`}>
             Favorites
+            {favoritesCount > 0 && (
+              <span className="favorites-badge">{favoritesCount}</span>
+            )}
           </Link>
         </div>
 

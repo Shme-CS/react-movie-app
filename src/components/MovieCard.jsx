@@ -1,6 +1,9 @@
+import { useFavorites } from '../context/FavoritesContext'
 import './MovieCard.css'
 
 function MovieCard({ movie, onClick }) {
+  const { isFavorite, toggleFavorite } = useFavorites()
+  
   // Destructure movie properties
   const {
     title,
@@ -38,6 +41,14 @@ function MovieCard({ movie, onClick }) {
     }
   }
 
+  // Handle favorite toggle
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation() // Prevent card click
+    toggleFavorite(movie)
+  }
+
+  const isMovieFavorite = isFavorite(id)
+
   return (
     <div className="movie-card" onClick={handleClick}>
       {/* Movie Poster */}
@@ -55,6 +66,15 @@ function MovieCard({ movie, onClick }) {
             <span className="rating-value">{rating}</span>
           </div>
         )}
+
+        {/* Favorite Button */}
+        <button 
+          className={`favorite-button ${isMovieFavorite ? 'active' : ''}`}
+          onClick={handleFavoriteClick}
+          aria-label={isMovieFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        >
+          {isMovieFavorite ? '❤️' : '🤍'}
+        </button>
       </div>
 
       {/* Movie Info */}

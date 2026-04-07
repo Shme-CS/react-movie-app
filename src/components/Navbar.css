@@ -136,6 +136,10 @@
   border-radius: 6px;
   transition: var(--transition);
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
 }
 
 .nav-link:hover {
@@ -146,6 +150,17 @@
 .nav-link.active {
   color: var(--primary-color);
   background-color: rgba(229, 9, 20, 0.1);
+}
+
+.favorites-badge {
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
 }
 
 /* Mobile Menu Toggle */

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { getPopularMovies } from '../services/movieApi'
 import MovieCard from '../components/MovieCard'
 import Loader from '../components/Loader'
 import './Home.css'
 
 function Home() {
+  const navigate = useNavigate()
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -31,8 +33,7 @@ function Home() {
   }
 
   const handleMovieClick = (movie) => {
-    console.log('Movie clicked:', movie)
-    // TODO: Navigate to movie details page
+    navigate(`/movie/${movie.id}`)
   }
 
   const handleRetry = () => {

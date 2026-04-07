@@ -28,6 +28,13 @@
   gap: var(--spacing-xs);
   cursor: pointer;
   flex-shrink: 0;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.02);
+}
 }
 
 .navbar-logo {

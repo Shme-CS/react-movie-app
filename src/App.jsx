@@ -59,6 +59,34 @@ const sampleMovies = [
     poster_path: "/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
     vote_average: 8.4,
     release_date: "2014-11-05"
+  },
+  {
+    id: 9,
+    title: "Goodfellas",
+    poster_path: "/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg",
+    vote_average: 8.5,
+    release_date: "1990-09-12"
+  },
+  {
+    id: 10,
+    title: "The Lord of the Rings: The Return of the King",
+    poster_path: "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+    vote_average: 8.5,
+    release_date: "2003-12-01"
+  },
+  {
+    id: 11,
+    title: "Fight Club",
+    poster_path: "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+    vote_average: 8.4,
+    release_date: "1999-10-15"
+  },
+  {
+    id: 12,
+    title: "The Empire Strikes Back",
+    poster_path: "/nNAeTmF4CtdSgMDplXTDPOpYzsX.jpg",
+    vote_average: 8.4,
+    release_date: "1980-05-20"
   }
 ]
 

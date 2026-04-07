@@ -11,53 +11,8 @@
 /* Main Content */
 .app-main {
   flex: 1;
-  padding: var(--spacing-xl) 0;
+  padding-top: 80px; /* Account for fixed navbar */
   background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-}
-
-.app-main .container {
-  text-align: center;
-}
-
-.app-main h2 {
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-md);
-  font-size: 2.5rem;
-}
-
-.app-main p {
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-  margin-bottom: var(--spacing-lg);
-}
-
-/* Feature Status */
-.feature-status {
-  max-width: 600px;
-  margin: var(--spacing-xl) auto;
-  text-align: left;
-  background-color: var(--bg-card);
-  padding: var(--spacing-lg);
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
-}
-
-.feature-status h3 {
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-sm);
-  font-size: 1.3rem;
-}
-
-.feature-status ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: var(--spacing-md);
-}
-
-.feature-status li {
-  color: var(--text-secondary);
-  padding: var(--spacing-xs) 0;
-  font-size: 1rem;
 }
 
 /* Footer */
@@ -76,15 +31,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .app-main h2 {
-    font-size: 1.8rem;
+  .app-main {
+    padding-top: 70px;
   }
   
-  .app-main p {
-    font-size: 1rem;
-  }
-  
-  .feature-status {
+  .app-footer {
     padding: var(--spacing-md);
   }
 }

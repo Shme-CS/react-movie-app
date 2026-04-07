@@ -1,0 +1,94 @@
+/* ===================================
+   Movie Grid Component Styles
+   =================================== */
+
+.movie-grid-section {
+  padding: var(--spacing-lg) 0;
+  min-height: calc(100vh - 200px);
+}
+
+.section-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Movie Grid Layout */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Responsive Grid */
+@media (max-width: 1200px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .movie-grid-section {
+    padding: var(--spacing-md) 0;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  color: var(--text-secondary);
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.empty-state-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.empty-state-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}

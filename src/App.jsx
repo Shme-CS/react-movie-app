@@ -1,5 +1,66 @@
 import Navbar from './components/Navbar'
+import MovieGrid from './components/MovieGrid'
 import './styles/App.css'
+
+// Sample movie data for demonstration
+const sampleMovies = [
+  {
+    id: 1,
+    title: "The Shawshank Redemption",
+    poster_path: "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+    vote_average: 8.7,
+    release_date: "1994-09-23"
+  },
+  {
+    id: 2,
+    title: "The Godfather",
+    poster_path: "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    vote_average: 8.7,
+    release_date: "1972-03-14"
+  },
+  {
+    id: 3,
+    title: "The Dark Knight",
+    poster_path: "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    vote_average: 8.5,
+    release_date: "2008-07-16"
+  },
+  {
+    id: 4,
+    title: "Pulp Fiction",
+    poster_path: "/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+    vote_average: 8.5,
+    release_date: "1994-09-10"
+  },
+  {
+    id: 5,
+    title: "Forrest Gump",
+    poster_path: "/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
+    vote_average: 8.5,
+    release_date: "1994-06-23"
+  },
+  {
+    id: 6,
+    title: "Inception",
+    poster_path: "/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+    vote_average: 8.4,
+    release_date: "2010-07-15"
+  },
+  {
+    id: 7,
+    title: "The Matrix",
+    poster_path: "/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+    vote_average: 8.2,
+    release_date: "1999-03-30"
+  },
+  {
+    id: 8,
+    title: "Interstellar",
+    poster_path: "/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    vote_average: 8.4,
+    release_date: "2014-11-05"
+  }
+]
 
 function App() {
   return (
@@ -9,24 +70,11 @@ function App() {
       
       {/* Main Content */}
       <main className="app-main">
-        <div className="container">
-          <h2>Welcome to Movie Discovery App</h2>
-          <p>Navbar component added successfully! Search functionality coming soon.</p>
-          <div className="feature-status">
-            <h3>✅ Completed Features:</h3>
-            <ul>
-              <li>✅ Project foundation with Vite</li>
-              <li>✅ Responsive Navbar with search UI</li>
-              <li>✅ Mobile-friendly navigation</li>
-            </ul>
-            <h3>🚧 Coming Next:</h3>
-            <ul>
-              <li>🔜 Movie cards component</li>
-              <li>🔜 API integration</li>
-              <li>🔜 Search functionality</li>
-            </ul>
-          </div>
-        </div>
+        <MovieGrid 
+          title="Popular Movies"
+          subtitle="Discover the most popular movies right now"
+          movies={sampleMovies}
+        />
       </main>
       
       {/* Footer */}

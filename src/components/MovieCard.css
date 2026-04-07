@@ -5,20 +5,33 @@
 .movie-card {
   position: relative;
   background-color: var(--bg-card);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .movie-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px) scale(1.02);
   box-shadow: var(--shadow-lg);
+  z-index: 10;
 }
 
 .movie-card:active {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.01);
 }
 
 /* Movie Poster */

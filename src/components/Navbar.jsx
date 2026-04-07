@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate, useSearchParams, useLocation } from 'react-router-dom'
 import { useFavorites } from '../context/FavoritesContext'
+import ThemeToggle from './ThemeToggle'
 import './Navbar.css'
 
 function Navbar() {
@@ -93,6 +94,7 @@ function Navbar() {
               <span className="favorites-badge">{favoritesCount}</span>
             )}
           </Link>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Toggle */}

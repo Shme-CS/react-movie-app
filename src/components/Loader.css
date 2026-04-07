@@ -1,0 +1,123 @@
+/* ===================================
+   Loader Component Styles
+   =================================== */
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  min-height: 400px;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-text {
+  margin-top: var(--spacing-md);
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Skeleton Loader */
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.skeleton-card {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-poster {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background: linear-gradient(
+    90deg,
+    var(--bg-card) 0%,
+    var(--bg-secondary) 50%,
+    var(--bg-card) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-info {
+  padding: var(--spacing-sm);
+}
+
+.skeleton-title {
+  height: 20px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--border-color) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-year {
+  height: 16px;
+  width: 60%;
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--border-color) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .loader {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skeleton-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+  }
+}
